@@ -16,6 +16,7 @@
 \usepackage{makecell}       % Biblioteca para quebrar linhas em células de tabelas
 \usepackage{graphicx} % Biblioteca para o gerenciamento de imagens
 \graphicspath{{./imagens/}} % O path onde as imagens estão
+\usepackage{csquotes}   % Para a formatação de citações
 
 
 \title{Uma Busca de Anterioridade em Serviços de Processamento de Texto e Imagem}
@@ -72,22 +73,63 @@ Nesta sessão listaremos as tarefas oferecidas pelos serviços analisados e desc
 
 \subsection{Ferramentas de Processamento de Linguagem Natural}
 
-Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP encontradas no levantamento.
+Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP encontradas no levantamento. Para ilustrar algumas tarefas, utilizamos a demonstração da IBM Cloud sobre o texto: 
+
+\begin{displayquote}
+"It was cold today and i still feel tired. One more sleepless night, it's the fifith this week. It's raining in the roof. Outside the window, the Aracaju streets are empty, the world is empty. My head hurts, my heart still hurts. I don't know what the fuck i was thinking when i said 'i love you'. I miss you. I miss you so much."
+\end{displayquote}{}
 
 \textbf{Análise de sentimento}: Identifica o sentimento retratado em um bloco de texto, sendo esses sentimentos positivos, negativos, algo intermediário entre os dois ou neutro. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/nlp_sentimentos.jpg}
+    \caption{Análise de sentimentos usando IBM Cloud}
+    \label{fig:my_label}
+\end{figure}{}
 \textbf{Análise sintática}: Classifica palavras em classes gramaticais, como substantivos, adjetivos e verbos. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/nlp_analise_sintatica.jpg}
+    \caption{Exemplo de análise sintática utilizando IBM Cloud}
+    \label{fig:sintatica}
+\end{figure}{}
 \textbf{Análise de entidades}: Identifica entidades em um texto, como pessoas, locais e produtos. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/nlp_entidade.jpg}
+    \caption{Exemplo de análise de entidades utilizando IBM Cloud}
+    \label{fig:nlp_entidades}
+\end{figure}{}
 \textbf{Classificação de Conteúdo}: Identifica entidades em um texto e as classifica, a partir de classificações pré-definidas, como pessoas, empresas, lugares, cidades, etc.\\
-\textbf{Extração de palavras-chave}: Identifica e extrai palavras relevantes em um texto.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/nlp_classificacao.jpg}
+    \caption{Classificação de conteúdo utilizando IBM Cloud}
+    \label{fig:nlp_classificacao}
+\end{figure}{}
+\textbf{Extração de palavras-chave}: Identifica e extrai palavras relevantes em um texto. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/nlp_extracao_keywords.jpg}
+    \caption{Extração de palavras-chave utilizando IBM Cl}
+    \label{fig:nlp_keywords}
+\end{figure}{}
 \textbf{Detecção de idioma}: Identifica o idioma predominante em um texto. \\
 \textbf{Text-to-speech}: Ferramentas de sintetização de áudio a partir de textos. \\
 \textbf{Speech-to-text}: Ferramentas de transcrição de áudio. \\
 \textbf{Chatbot}: Serviços que oferecem uma plataforma, como chats, para tarefas de processamento de linguagem natural. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{imagens/chatbot.jpg}
+    \caption{O Google Assistent é um exemplo de chatbot}
+    \label{fig:chatbot}
+\end{figure}{}
 \textbf{Tradutor}: Ferramentas de tradução, transposição entre idiomas.\\
-    \begin{figure}[ht]
+    \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.5]{imagens/tradutor.jpg}
+        \includegraphics[scale=0.45]{imagens/tradutor.jpg}
         \caption{Exemplo do recurso de tradutor, utilizando TextBlob}
+        \label{fig:tradutor}
     \end{figure}
 \textbf{Moderador de conteúdo}: Ferramentas que permitem a identificação e censura de palavrões e palavras de baixo calão. \\
 \textbf{Reconhecimento do locutor}: Softwares capazes de identificar pessoas através de uma amostra de voz do usuário, o qual precisa ser cadastrado anteriormente. \\
@@ -95,19 +137,87 @@ Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP enco
 \subsection{Ferramentas de PI}
 Nesta subseção, são descritas as 13 tarefas de PI encontradas no levantamento. \\
 
-\textbf{Detecção de categorias em imagens}: Ferramentas para classificar imagens de acordo com categorias pré-definidas, como "praia", "biblioteca", "academia de ginástica", "supermercado", etc. \\
+\textbf{Detecção de categorias em imagens}: Ferramentas para classificar imagens de acordo com categorias pré-definidas, como "praia", "biblioteca", "academia de ginástica", "supermercado", etc.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{imagens/classificacao_imagens.png}
+    \caption{Exemplo de Classificação de Imagens}
+    \label{fig:classificação_imagens}
+\end{figure}{}
 \textbf{Pesquisa por imagens semelhantes}: Tais ferramentas irão buscar por imagens que se assemelham à uma imagem dada como parâmetro. Tais semelhanças podem ser esquemas de cores e objetos presentes na imagem, bem como entidades detectadas. \\
-\textbf{Detecção de pontos de referência}: Softwares capazes de reconhecer pontos populares, como Torre Eiffel, Cristo Redentor e outros pontos turísticos ou relevantes como referência. \\
-\textbf{Reconhecimento óptico de caracteres, do inglês: Optical Character Recognition (OCR)}: Softwares capazes de identificar caracteres em uma imagem. A partir dessas ferramentas é possível, por exemplo, transcrever textos através de uma fotografia. \\
-\textbf{Reconhecimento de manuscritos}: Caso particular do reconhecimento óptico de caracteres. Tais ferramentas podem reconhecer, em imagens, textos escritos à mão. \\
+\textbf{Detecção de pontos de referência}: Softwares capazes de reconhecer pontos populares, como Torre Eiffel, Cristo Redentor e outros pontos turísticos ou relevantes como referência.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{imagens/Paris2.jpg}
+    \caption{Detecção de pontos de referência da Google Cloud}
+    \label{fig:ponto_turistico}
+\end{figure}{}
+\textbf{Reconhecimento óptico de caracteres, do inglês: Optical Character Recognition (OCR)}: Softwares capazes de identificar caracteres em uma imagem. A partir dessas ferramentas é possível, por exemplo, transcrever textos através de uma fotografia.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.15]{imagens/ocr.png}
+    \caption{Exemplo de Reconhecimento óptico de caracteres}
+    \label{fig:ocr}
+\end{figure}{}
+\textbf{Reconhecimento de manuscritos}: Caso particular do reconhecimento óptico de caracteres. Tais ferramentas podem reconhecer, em imagens, textos escritos à mão.\\
+% https://towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/handwritten.png}
+    \caption{Exemplo de reconhecimento de manuscritos}
+    \label{fig:manuscrito}
+\end{figure}{}
 \textbf{Localizador de objetos}: Identifica a posição dos objetos, seus limites retangulares e quantos objetos do mesmo tipo existem na imagem.\\
-\textbf{Detecção facial}: Capacidade de detectar a presença de rostos humanos em imagens, sem necessariamente reconhecer tal rosto. \\
-\textbf{Moderação de conteúdo}: Softwares para detecção de conteúdo imprópria em imagens, tais como nudez e violência. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/deteccao_objetos.png}
+    \caption{Exemplo da tarefa de detecção de objetos} % https://www.pyimagesearch.com/2019/05/13/object-detection-and-image-classification-with-google-coral-usb-accelerator/
+    \label{fig:detecção_obetos}
+\end{figure}
+\textbf{Detecção facial}: Capacidade de detectar a presença de rostos humanos em imagens, sem necessariamente reconhecer tal rosto.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.29]{imagens/caracteristicas_watson_visual_recog.png}
+    \caption{Exemplo de detecção facial e extração de atributos do IBM Cloud}
+    \label{fig:detecção_facial}
+\end{figure}{}
+\textbf{Moderação de conteúdo}: Softwares para detecção de conteúdo impróprio em imagens, tais como nudez e violência. \\
 \textbf{Pesquisa por produtos}: Identifica produtos em uma imagem e busca por produtos semelhantes. \\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{imagens/produtos_semelhantes.png}
+    \caption{O Google Lens, para smartphones, possui o recurso de busca por produtos semelhantes}
+    \label{fig:produtos_semelhantes}
+\end{figure}{}
 \textbf{Detecção de atributos}: Identifica atributos como cores dominantes em uma imagem e da sugestões de corte.\\
-\textbf{Reconhecimento facial}: Softwares para reconhecimento de indivíduos em imagens através do seu rosto. \\
-\textbf{Análise de sentimentos}: Softwares que reconhecem determinados sentimentos, tais quais felicidade, raiva e tristeza através de expressões faciais. \\
-\textbf{Descrição da imagem}: Retorna informações sobre o conteúdo de uma imagem.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{imagens/propriedades.png}
+    \caption{Exemplo de detecção de atributos da API Vision do Google Cloud}
+    \label{fig:atributos}
+\end{figure}{}
+\textbf{Reconhecimento facial}: Softwares para reconhecimento de indivíduos em imagens através do seu rosto.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{imagens/reconhecimento_facial.jpg}
+    % https://github.com/ageitgey/face_recognition
+    \caption{Reconhecimento facial}
+    \label{fig:reconhecimento_facial}
+\end{figure}{}
+\textbf{Análise de sentimentos}: Softwares que reconhecem determinados sentimentos, tais quais felicidade, raiva e tristeza através de expressões faciais.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.19]{imagens/analise_facial.jpg}
+    \caption{Ilustração de análise de sentimentos em imagem da Amazon AWS}
+    \label{fig:imagem_sentimentos}
+\end{figure}{}
+\textbf{Descrição da imagem}: Retorna informações sobre o conteúdo de uma imagem.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.25]{imagens/caption.png}
+    \caption{Descrição de imagem da Microsoft Azure}
+    \label{fig:captionalize}
+\end{figure}{}
 
 \section{Comparativos}
 
@@ -152,7 +262,6 @@ Exibiremos, subsequentemente, tabelas com comparativos entre as ferramentas de c
     Detecção de pontos de referência & X & & & X \\
     OCR & X & X & & X \\
     Reconhecimento de manuscritos & X & & & X \\
-    \cmidrule(r){1-5}
     Detecção facial & X & X & X & X \\
     Moderação de conteúdo & X & X & & X \\
     Pesquisa por produtos & X & & & \\
