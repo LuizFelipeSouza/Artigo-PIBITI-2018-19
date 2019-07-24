@@ -17,6 +17,20 @@
 \usepackage{graphicx} % Biblioteca para o gerenciamento de imagens
 \graphicspath{{./imagens/}} % O path onde as imagens estão
 \usepackage{csquotes}   % Para a formatação de citações
+\usepackage[most]{tcolorbox}
+
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+
+\newtcolorbox{myquote}[2][]{%
+    grow to right by=-10mm,
+    grow to left by=-10mm,
+    boxrule=0pt,
+    breakable,
+    enhanced jigsaw,
+    borderline west={1pt}{0pt}{darkblue},
+    opacityback=0,
+    #1,
+}
 
 
 \title{Uma Busca de Anterioridade em Serviços de Processamento de Texto e Imagem}
@@ -74,10 +88,9 @@ Nesta sessão listaremos as tarefas oferecidas pelos serviços analisados e desc
 \subsection{Ferramentas de Processamento de Linguagem Natural}
 
 Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP encontradas no levantamento. Para ilustrar algumas tarefas, utilizamos a demonstração da IBM Cloud sobre o texto: 
-
-\begin{displayquote}
-"It was cold today and i still feel tired. One more sleepless night, it's the fifith this week. It's raining in the roof. Outside the window, the Aracaju streets are empty, the world is empty. My head hurts, my heart still hurts. I don't know what the fuck i was thinking when i said 'i love you'. I miss you. I miss you so much."
-\end{displayquote}{}
+\begin{myquote}
+        "It was cold today and i still feel tired. One more sleepless night, it's the fifith this week. It's raining in the roof. Outside the window, the Aracaju streets are empty, the world is empty. My head hurts, my heart still hurts. I don't know what i was thinking when i said 'i love you'. I miss you. I miss you so much."
+\end{myquote}
 
 \textbf{Análise de sentimento}: Identifica o sentimento retratado em um bloco de texto, sendo esses sentimentos positivos, negativos, algo intermediário entre os dois ou neutro. \\
 \begin{figure}[H]
