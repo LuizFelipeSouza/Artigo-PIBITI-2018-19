@@ -36,7 +36,7 @@
     #1,
 }
 
-\title{Comparativo de preço entre os principais provedores de Aprendizado de Máquina como um Serviço}
+\title{Comparativo entre os principais provedores de Aprendizado de Máquina como um Serviço}
 \author{
   Luiz Felipe da Conceição Souza \\
   Departamento de Computação\\
@@ -55,7 +55,8 @@
 \maketitle
 
 \begin{abstract}
-\lipsum[1]
+% \lipsum[1]
+Aprendizado de Máquina como Serviço (MLaaS) são serviços ofertados via computação em nuvem para que desenvolvedores possam utilizar os benefícios do Aprendizado de Máquina em suas aplicações, sem conhecimento específico nessa área. Com o objetivo de guiar tais desenvolvedores na escolha de um provedor de MLaaS, tabelamos neste estudos os preços dos principais provedores: Google Cud, Amazon AWS, IBM Watson e Microsoft Azure. Com isso, notamos també que alguns provedores permitem o treinamento de modelos, enquanto outros apenas oferecem as funcionalidades já prontas.
 \end{abstract}
 
 % keywords can be removed
@@ -73,7 +74,7 @@ Com o crescimento da área de Aprendizado de Máquina (do inglês, \textit{Machi
 
 Sendo assim, esse estudo foi realizado com o objetivo de documentar e comparar os serviços de Processamento de Linguagem Natural (do inglês, Natural Language Processing, NLP) e Processamento de Imagem (PI) disponíveis pelas empresas selecionadas, de modo a servir de referência e facilitar o processo de escolha de um programador leigo. Para isso, foram visitados os sites das empresas Google, Amazon, IBM, Microsoft e Facebook em busca de ferramentas relacionadas a PI e NLP. A partir disso, tabelamos quais dessas tarefas estão disponíveis por cada empresa e comparamos seus preços. Ao longo do levantamento, foi observado que o Facebook possui um modelo de negócios distinto do das outras empresas, em relação à disponibilização das ferramentas observadas. Seus softwares ficam disponíveis como bibliotecas e APIs de código aberto, no GitHub, ao contrário das demais empresas que as oferecem como serviços. Dessa forma, removemos as ferramentas do Facebook deste levantamento. Também desenvolvemos uma aplicação Android para ilustrar o uso das tarefas mostradas neste estudo, utilizando o Google Cloud.
 
-Este trabalho está estruturado da seguinte forma: Na seção 2, descrevemos o método utilizado para este estudo. Na seção 3, são apresentados alguns trabalhos relacionados. Introduzimos os conceitos das ferramentas oferecidas como serviço na seção 4. Os comparativos de preços e a disponibilidade das ferramentas analisadas são apresentados na seção 5. Na seção 6, demonstramos a aplicação de alguns desses serviços da \textit{Google Cloud} em um aplicativo \textit{Android}. Por fim, a conclusão é feita na seção 7. Os endereços URL das ferramentas apresentadas neste estudo são listados em um apêndice no final do artigo.
+Este trabalho está estruturado da seguinte forma: Na seção 2, descrevemos o método utilizado para este estudo. Na seção 3, são apresentados alguns trabalhos relacionados. Introduzimos os conceitos das ferramentas oferecidas como serviço na seção 4. Os comparativos de preços e a disponibilidade das ferramentas analisadas são apresentados na seção 5. Por fim, a conclusão é feita na seção 6. Os endereços URL das ferramentas apresentadas neste estudo são listados em um apêndice no final do artigo.
 
 \section{Método}
 Em virtude de encontrar e analisar serviços de NLP e PI, foram selecionadas 5 empresas que prestam serviços em nuvem relacionados a IA, sendo essas: Google, Amazon, IBM, Facebook e Microsoft. A partir dessa seleção, foram listadas ferramentas relacionadas às áreas de interesse, através de buscas nos sites das empresas analisadas. Em seguida, organizamos os dados em tabelas, indicando quais empresas forneciam ou não serviços com as respectivas tarefas e comparativos entre os custos de cada plataforma. Escolhemos exibir os preços em dólar, seu valor bruto, pois o valor em reais pode estar sujeito a taxas de transações internacionais e à cotação, influenciando no preço final. Durante o estudo, notamos que algumas plataformas oferecem serviços de treinamento de modelos de ML. Essa funcionalidade também foi levada em consideração em uma seção à parte. O estudo foi feito no primeiro semestre de 2019, os preços foram atualizados no mês de julho do mesmo ano.
@@ -529,12 +530,15 @@ Para o serviço de PI, a Amazon oferece a API Rekognition que, além de analisar
 \subsubsection{Treinamento de modelos de aprendizado de máquina}
 Traremos destaque, nesta subseção, para os serviços que permitem o treinamento de modelos de ML, integrados ou não. Na tabela 13, tabelamos essa informação tanto dos serviços de NLP quando dos serviços de PI.
 
-Iniciando pela Google Cloud, temos o serviço de PI, o Auto ML Vision (Beta). A partir dele, é possível treinar classificadores e marcar pessoas com ou sem rótulos predefinidos. Esse serviço é gratuito para até 1k de imagens previstas por mês e para uma hora de treinamento. Para a análise de vídeos, há a API Video Intelligence, que possui uma interface gráfica e uma API REST, e permite classificar vídeos a partir de rótulos personalizados e detecta mudanças no cenário de um vídeo. Para as tarefas de NLP, a Google Cloud disponibiliza a AutoML Natural Language (Beta) e a AutoML Translation (Beta). O primeiro permite a criação e a classificação de entidades, sentimentos e outros modelos personalizados. Já o segundo permite o treinamento de modelos de ML para obter traduções mais fiéis e adaptadas a determinados contextos. Para a Amazon AWS, não foram encontrados serviços de treinamento para modelos de ML voltados a programadores sem conhecimento técnico. Na Amazon AWS, o único serviço que oferece personalização por modelos de ML, é o Amazon Comprehend.\footnote{Supracitado na subseção 4.1}
+Iniciando pela Google Cloud, temos o serviço de PI, o Auto ML Vision (Beta). A partir dele, é possível treinar classificadores e marcar pessoas com ou sem rótulos predefinidos. Esse serviço é gratuito para até 1k de imagens previstas por mês e para uma hora de treinamento. Para a análise de vídeos, há a API \textit{Video Intelligence}, que possui uma interface gráfica e uma API REST, e permite classificar vídeos a partir de rótulos personalizados e detecta mudanças no cenário de um vídeo. Para as tarefas de NLP, a Google Cloud disponibiliza a AutoML Natural Language (Beta) e a AutoML Translation (Beta). O primeiro permite a criação e a classificação de entidades, sentimentos e outros modelos personalizados. Já o segundo permite o treinamento de modelos de ML para obter traduções mais fiéis e adaptadas a determinados contextos. Para a Amazon AWS, não foram encontrados serviços de treinamento para modelos de ML voltados a programadores sem conhecimento técnico. Na Amazon AWS, o único serviço que oferece personalização por modelos de ML, é o Amazon Comprehend.\footnote{Supracitado na subseção 4.1}
 O serviço de tradução da IBM Cloud oferece um serviço de customização, baseado em ML. Para tal serviço, é cobrada uma taxa de US\$ 0,10 para cada 1k de caracteres. O serviço de classificação de linguagem natural da IBM também possibilita o treinamento de modelos, para os quais são oferecidos 4 treinamentos gratuitos por mês. Na Microsoft Azure, é possível treinar modelos para transcrição personalizada em seu serviço de speech-to-text.
 
-\section{Aplicação}
-
 \section{Conclusão}
+Neste trabalho, foram tabelados os preços dos serviços de MLaaS oferecidos pela Google Cloud, IBM Watson, Amazon AWS e Microsoft Azure. Assim, desenvolvedores sem conhecimento técnico em algoritmos de ML podem utilizar este trabalho como referência para auxiliar na escolha de um desses provedores de serviço. Apesar das diversas empresas e dos diversos serviços oferecidos por elas, focamos em MLaaS e em 4 das principais empresas que oferecem soluções de Computação em Nuvem, durante a pesquisa, descobrimos que o Facebook oferta suas soluções em repositórios de código aberto e, portanto, seus serviços não foram considerados.
+
+Alguns provedores de MLaaS oferecem planos para o treinamentos dos modelos de ML, enquanto que outros oferecem apenas a opção de utilizar modelos já prontos. É possível realizar o treinamento na Google Cloud, tanto para Visão Computacional, quanto para NLP e Análise de Vídeos. A Amazon AWS oferece treinamento apenas para tarefas de compreensão de linguagem natural. A IBM Watson oferece treinamento para customização de tradução e classificação de linguagem natural. Já a Microsoft Azure oferece treinamento para o serviço de transcrição speech-to-text.
+
+Como trabalhos futuros, podem-se ser feitas outras pesquisas considerando outros serviços ofertados, ou sobre a adoção de tais serviços pelos desenvolvedores. Uma outra proposta interessante a ser adotada, seria verificar a viabilidade de ter um time voltado ao desenvolvimento de soluções em ML em uma empresa em oposição a contratar provedores de MLaaS.
 
 \printbibliography
 
