@@ -11,18 +11,21 @@
 \usepackage{microtype}      % microtypograph
 \usepackage{lipsum}
 \usepackage[brazil]{babel}  % Suporte a pt-br
-\usepackage{float}          % Pacote para gerenciamento de flutuantes, como iamgens e tabelas
+\usepackage{float}          % Pacote para gerenciamento de flutuantes, como imagens e tabelas
 \usepackage{makecell}       % Biblioteca para quebrar linhas em células de tabelas
 \usepackage{graphicx}       % Biblioteca para o gerenciamento de imagens
 \usepackage{csquotes}       % Para a formatação de citações
 \usepackage[most]{tcolorbox}
 \usepackage{appendix}
 \usepackage{footnote}
+\usepackage{biblatex}       % Gerenciador de referências
+\addbibresource{referencias.bib}
+
 \graphicspath{{./imagens/}} % O path onde as imagens estão
 \makesavenoteenv{tabular}
 \makesavenoteenv{table}
 \definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
-\newtcolorbox{myquote}[2][]{%
+\newtcolorbox{myquote}[2][]{
     grow to right by=-10mm,
     grow to left by=-10mm,
     boxrule=0pt,
@@ -33,7 +36,7 @@
     #1,
 }
 
-\title{Uma Busca de Anterioridade em Serviços de Processamento de Texto e Imagem}
+\title{Comparativo de preço entre os principais provedores de Aprendizado de Máquina como um Serviço}
 \author{
   Luiz Felipe da Conceição Souza \\
   Departamento de Computação\\
@@ -56,24 +59,50 @@
 \end{abstract}
 
 % keywords can be removed
-\keywords{Processamento de Linguagem Natural \and Processamento de Imagem \and Nuvem \and Google \and Microsoft \and IBM \and Amazon \and Android \and Cloud \and NLP \and PLN, \and Desenvolvimento de Software \and Inteligência Artificial \and Serviços}
+\keywords{Processamento de Linguagem Natural \and Processamento de Imagem \and Computação em nuvem \and Android \and Cloud \and NLP \and PLN, \and Desenvolvimento de Software \and Inteligência Artificial \and Serviços \and comparação de preços \and Aprendizado de Máquina como Serviço}
 
 \section{Introdução}
-Com a popularização dos serviços de Inteligência Artificial (IA), muitos desenvolvedores que querem desenvolver aplicações utilizando tais tecnologias são barrados por sua complexidade técnica. Dessa forma, empresas que oferecem serviços em nuvem tem buscado oferecer serviços de IA de forma que o desenvolvedor possa utilizar em seus aplicativos, sem precisar dedicar horas de qualificação técnica em algoritmos de Reconhecimento de Padrões e Aprendizado de Máquina (do inglês, Machine Learning, ML). No entanto, em vista dos vários serviços oferecidos por diversas empresas, o desenvolvedor comum pode sentir-se indeciso e confuso ao escolher quais ferramentas melhor se adéquam à sua necessidade, seja para desenvolvimento em uma empresa, ou para algum projeto pessoal.
-\newline
+% Na introdução, precisamos ter:
+% * Objetivo geral e específicos
+% * Resultados esperados
+% * Limitações do trabalho
+% * Metodologia utilizada
+% * Justificativa
+% * fechando com uma explicação das demais seções do trabalho
+Com o crescimento da área de Aprendizado de Máquina (do inglês, \textit{Machine Learning}, ML)\cite{alpaydin2014introduction}, muitos desenvolvedores que querem desenvolver aplicações utilizando tais tecnologias são barrados por sua complexidade técnica \cite{ribeiro2015}. Dessa forma, com o uso da Computação em Nuvem, grandes empresas têm utilizado sua infraestrutura para oferecer Aprendizado de Máquina como um Serviço (\textit{Machine Learning as a Service, MLaaS}) de forma que o desenvolvedor possa utilizar em suas aplicações, sem precisar dedicar horas de qualificação técnica em algoritmos de Reconhecimento de Padrões e Aprendizado de Máquina. No entanto, em vista dos vários serviços oferecidos por diversas empresas, o desenvolvedor comum pode sentir-se indeciso e confuso ao escolher quais ferramentas melhor se adéquam à sua necessidade, seja para desenvolvimento em uma empresa, ou para algum projeto pessoal.
+
 Sendo assim, esse estudo foi realizado com o objetivo de documentar e comparar os serviços de Processamento de Linguagem Natural (do inglês, Natural Language Processing, NLP) e Processamento de Imagem (PI) disponíveis pelas empresas selecionadas, de modo a servir de referência e facilitar o processo de escolha de um programador leigo. Para isso, foram visitados os sites das empresas Google, Amazon, IBM, Microsoft e Facebook em busca de ferramentas relacionadas a PI e NLP. A partir disso, tabelamos quais dessas tarefas estão disponíveis por cada empresa e comparamos seus preços. Ao longo do levantamento, foi observado que o Facebook possui um modelo de negócios distinto do das outras empresas, em relação à disponibilização das ferramentas observadas. Seus softwares ficam disponíveis como bibliotecas e APIs de código aberto, no GitHub, ao contrário das demais empresas que as oferecem como serviços. Dessa forma, removemos as ferramentas do Facebook deste levantamento. Também desenvolvemos uma aplicação Android para ilustrar o uso das tarefas mostradas neste estudo, utilizando o Google Cloud.
-\newline
-Na seção 2, descrevemos o método utilizado. Na seção 3, são apresentadas e descritas as tarefas encontradas. Na seção 4, apresentam-se os comparativos entre a disponibilidade de ferramentas por empresa analisada, bem como são comparados os preços entre as ferramentas. Na seção 5, demonstramos a aplicação de algumas ferramentas do Google Cloud em uma aplicação Android. Por fim, a seção 6 apresenta a conclusão. Os endereços URL das ferramentas apresentadas neste estudo são listados em um apêndice no final do artigo.
+
+Este trabalho está estruturado da seguinte forma: Na seção 2, descrevemos o método utilizado para este estudo. Na seção 3, são apresentados alguns trabalhos relacionados. Introduzimos os conceitos das ferramentas oferecidas como serviço na seção 4. Os comparativos de preços e a disponibilidade das ferramentas analisadas são apresentados na seção 5. Na seção 6, demonstramos a aplicação de alguns desses serviços da \textit{Google Cloud} em um aplicativo \textit{Android}. Por fim, a conclusão é feita na seção 7. Os endereços URL das ferramentas apresentadas neste estudo são listados em um apêndice no final do artigo.
 
 \section{Método}
-Em virtude de encontrar e analisar serviços de NLP e PI, foram selecionadas 5 empresas que prestam serviços em nuvem relacionados a IA, sendo essas: Google, Amazon, IBM, Facebook e Microsoft. A partir dessa seleção, foram listadas ferramentas relacionadas às áreas de interesse, através de buscas nos sites das empresas analisadas. Em seguida, organizamos os dados em tabelas, indicando quais empresas forneciam ou não serviços com as respectivas tarefas e comparativos entre os custos de cada plataforma. Escolhemos exibir os preços em dólar, seu valor bruto, pois o valor em reais pode estar sujeito a taxas de transações internacionais, incrementando no preço final. Durante o estudo, notamos que algumas plataformas oferecem serviços de treinamento de modelos de ML. Essa funcionalidade também foi levada em consideração em uma seção à parte. O estudo foi feito no primeiro semestre de 2019, os preços foram atualizados no mês de julho do mesmo ano.
+Em virtude de encontrar e analisar serviços de NLP e PI, foram selecionadas 5 empresas que prestam serviços em nuvem relacionados a IA, sendo essas: Google, Amazon, IBM, Facebook e Microsoft. A partir dessa seleção, foram listadas ferramentas relacionadas às áreas de interesse, através de buscas nos sites das empresas analisadas. Em seguida, organizamos os dados em tabelas, indicando quais empresas forneciam ou não serviços com as respectivas tarefas e comparativos entre os custos de cada plataforma. Escolhemos exibir os preços em dólar, seu valor bruto, pois o valor em reais pode estar sujeito a taxas de transações internacionais e à cotação, influenciando no preço final. Durante o estudo, notamos que algumas plataformas oferecem serviços de treinamento de modelos de ML. Essa funcionalidade também foi levada em consideração em uma seção à parte. O estudo foi feito no primeiro semestre de 2019, os preços foram atualizados no mês de julho do mesmo ano.
+
+% Falar sobre aprendizado de máquina como serviço
+% Computação em nuvem
+% Processamento de linguagem natural
+% Processamento inteligente de imagens
+\section{Trabalhos relacionados}
+\subsection{Complexidade vs. performance: análise empírica de Aprendizado de Máquina como Serviço}
+Visando a pesquisa em redes, \cite{yao2017} compara os provedores de MLaaS, levando em consideração sua performance e complexidade quando há controle por parte do usuário. Os autores fazem essa análise em 6 plataformas: Amazon Machine Learning (Amazon), Automatic Business Modeler (ABM), BigML, Google Prediction API (Google), Microsoft Azure ML Studio (Microsoft) e PredictionIO, e buscam entender sob quais circunstâncias o desempenho dos MLaaS é superior ao desempenho de um modelo de Aprendizado de Máquina autônomo. Os autores concluem que os MLaaS, quando corretamente utilizados, possuem desempenho melhor que os modelos autônomos. 
+
+\subsection{Comparativo de várias plataformas de computação em nuvem}
+Os autores \cite{peng2009comparison} comparam as plataformas de computação em nuvem \textit{Abicloud}, \textit{Eucalyptus}, \textit{Nimbus} e \textit{OpenNebula}, levando em consideração. O estudo leva em conta para a comparação o caráter do serviço, se é privado, público ou híbrido, sua escalabilidade, sua forma - se é de Infraestrutura como serviço, plataforma como serviço ou software como serviço -, dentre outros aspectos. Os autores buscam que seu trabalho sirva como referência para guiar a escolha de algum dos serviços em nuvem, visto que cada um possui suas próprias vantagens e desvantagens.
+
+\subsection{Comparação de plataformas de computação em nuvem providas pela Amazon e Google}
+Um outro estudo focado nos serviços em nuvem da Amazon e Google é feito por \cite{hyseni2017comparison}. Nesse trabalho, os autores comparam todos os serviços oferecidos em nuvem pelas empresas, incluindo Infraestrutura como Serviço (IaaS), Plataforma como Serviço (PaaS) e Software como Serviço (SaaS), seus preços e instâncias de máquina virtual. Os autores concluem que a Amazon oferece mais serviços que a Google. No entanto, os preços desta são mais baixos, ficando de acordo com as necessidades do consumidor se a escolha será pautada em mais serviços ou em preços mais baixos.
+
+\subsection{Modelos e esquemas de preço dos provedores de IaaS: Um estudo de comparação}
+Um estudo de comparação é feito por \cite{murthy2012pricing} entre os esquemas e modelos de preços dos provedores de IaaS. Os autores classificam as relações entre custo / benefício em modelos matemáticos. Também comparam os serviços em várias categorias: por espaço de armazenamento, para recursos computacionais (CPU, RAM e espaço em disco). Os autores concluem chamando a atenção para o fato de que há outros fatores determinantes ao escolher um provedor de IaaS, além do preço.
+
+Ao contrário de \cite{peng2009comparison}, \cite{hyseni2017comparison} e \cite{murthy2012pricing}, voltaremos a atenção, neste presente estudo, aos provedores de Software como um Serviço. Mais especificamente, assim como \cite{yao2017} aos provedores de MLaaS, levando em conta alguns dos provedores mais populares da Google, Amazon, IBM e Microsoft. 
+
 
 \section{Ferramentas}
 Nesta seção listaremos as tarefas oferecidas pelos serviços analisados e descreveremos cada uma delas, além de exibir ilustrações e exemplos para alguns casos. Foram encontradas um total de 24 tarefas, sendo 11 delas relacionadas a NLP e 13 a PI. Descrevemos essas tarefas nas subseções 3.1 e 3.2, respectivamente.
 
 \subsection{Ferramentas de Processamento de Linguagem Natural}
-
-Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP encontradas no levantamento. Para ilustrar algumas tarefas, utilizamos a demonstração da IBM Cloud sobre o texto: 
+Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP encontradas no levantamento. Por linguagem natural, entende-se linguagens utilizadas para comunicação entre seres humanos, tais como Português, Iorubá, Francês, etc. Sendo assim, NLP é definido como quaisquer manipulações computacionais sobre textos em linguagem natural\cite{nltk}. Para ilustrar algumas tarefas, utilizamos a demonstração da IBM Cloud sobre o texto: 
 \begin{myquote}
         "It was cold today and i still feel tired. One more sleepless night, it's the fifith this week. It's raining in the roof. Outside the window, the Aracaju streets are empty, the world is empty. My head hurts, my heart still hurts. I don't know what i was thinking when i said 'i love you'. I miss you. I miss you so much."
 \end{myquote}
@@ -129,7 +158,7 @@ Nesta subseção, serão descritas as funcionalidades das 11 tarefas de NLP enco
     \caption{O Google Assistant é um exemplo de chatbot}
     \label{fig:chatbot}
 \end{figure}{}
-\textbf{Tradutor}: Ferramentas de tradução, transposição entre idiomas. Com elas é possível obter texto em uma outra linguagem através de uma entrada de texto em qualquer outra linguagem. Na figura 8, utilizamos a ferramenta \textit{Open Source} TextBlob para realizar a tradução da frase "Fechado no barulho do próprio silêncio. Visitas não são permitidas. Volte mais tarde." para o inglês. \\
+\textbf{Tradutor}: Ferramentas de tradução, transposição entre idiomas. Com elas é possível obter texto em uma outra linguagem através de uma entrada de texto em qualquer outra linguagem. Na figura 8, utilizamos a ferramenta \textit{Open Source} TextBlob para realizar a tradução da frase "Fechado no barulho do próprio silêncio. Visitas não são permitidas. Volte mais tarde." \cite{mediumluiz} para o inglês. \\
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.45]{imagens/tradutor.jpg}
@@ -215,7 +244,7 @@ Nesta subseção, são descritas as 13 tarefas de PI encontradas no levantamento
     \caption{Reconhecimento facial}
     \label{fig:reconhecimento_facial}
 \end{figure}{}
-\textbf{Análise de sentimentos}: Softwares que reconhecem determinados sentimentos, tais quais felicidade, raiva e tristeza através de expressões faciais. A fiura 19 ilustra o funcionamento de softwares de análise de sentimentos. A partir da foto de um rosto, é possível extrair informações como sorriso e felicidade.\\
+\textbf{Análise de sentimentos}: Softwares que reconhecem determinados sentimentos, tais quais felicidade, raiva e tristeza através de expressões faciais. A figura 19 ilustra o funcionamento de softwares de análise de sentimentos. A partir da foto de um rosto, é possível extrair informações como sorriso e felicidade.\\
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.19]{imagens/analise_facial.jpg}
@@ -357,7 +386,7 @@ Na Google Cloud, o serviço de Classificação de Conteúdo é cobrado pela cham
   \label{tab:table6}
 \end{table}
 
-Serviços de tradução foram encontrados em todas as plataformas. A Google Cloud oferece dois serviços de tradução: uma API com um modelo de ML pré-treinado e a AutoML Translation, que permite o treino de um modelo de ML para serviços de tradução. A IBM Cloud oferece quatro tipos de planos para seu serviço de tradução: Lite, Standard, Advanced e Premium. Para fins de comparação, levaremos em conta o plano lite. A Microsoft Azure, ao contrário dos anteriores, oferece serviço de tradução apenas para fala em dois contêiners: um grátis, que permite apenas uma solicitação e o contêiner padrão, que permite até 20 solicitações simultaneamente. Todos os serviços, exceto Google Cloud, contam com detecção automática do idioma integrada.
+Serviços de tradução foram encontrados em todas as plataformas. A Google Cloud oferece dois serviços de tradução: uma API com um modelo de ML pré-treinado e a AutoML Translation, que permite o treino de um modelo de ML para serviços de tradução. A IBM Cloud oferece quatro tipos de planos para seu serviço de tradução: \textit{Lite}, \textit{Standard}, \textit{Advanced} e \textit{Premium}. Para fins de comparação, levaremos em conta o plano lite. A Microsoft Azure, ao contrário dos anteriores, oferece serviço de tradução apenas para fala em dois \textit{containers}: um grátis, que permite apenas uma solicitação e o contêiner padrão, que permite até 20 solicitações simultaneamente. Todos os serviços, exceto Google Cloud, contam com detecção automática do idioma integrada.
 
 \begin{table}[!!ht]
  \caption{Disponibilidade gratuita dos serviços de Tradutor}
@@ -422,7 +451,7 @@ Um detalhe sobre os serviços de Speech-to-text, é que a Amazon AWS o usuário 
   \label{tab:table10}
 \end{table}
 
-Todas as empresas analisadas oferecem serviços para a construção de chatbots. Na Google Cloud, temos o DialogFlow que utiliza ML para customizar os tipos de entidade que podem ser reconhecidas pelo chatbot a partir de um conjunto de dados inicial fornecido pelo usuário desenvolvedor. O DialogFlow também faz uso das APIs de text-to-speech e speech-to-text para criar bots que se comunicam por voz com o usuário final. Através do serviço de Analytics da Google, o chatbot pode ser otimizado para atender os interesses da sua organização. Além disso, o bot conta também com análise de sentimentos, para melhor atender ao usuário final. O serviço da Amazon, o AWS Lex, utiliza a mesma tecnologia utilizada na Alexa para construir bots com análise de sentimentos, compreensão de fala e escrita. O AWS Lex também oferece fácil integração com outros serviços da Amazon AWS, como lógica de negócios, banco de dados, segurança, desenvolvimento de aplicativos móveis. etc. O Watson Assistant, da IBM, possui o recurso de direcionar o usuário para plataformas como Slack e Facebook Messenger, além de direcionar o usuário para um atendente humano quando necessário. Através do sistema de digressões, o chatbot feito a partir do IBM Watson pode ir de um tópico a outro em uma conversa e retornar ao primeiro tópico posteriormente. O chatbot também pede para o usuário ser mais claro quando é feito um pedido ambíguo ou incompreensível, evitando respostas erradas. Por fim, o serviço de bot do Azure também permite integração com canais de comunicação, como Slack e Facebook Messenger. Como os serviços anteriores, também possui suporte, tanto para a interação por texto, quanto por fala. Além disso, também é possível interagir através de imagens em anexo; o Azure utilizará seus próprios serviços de PI para interagir com imagens em anexo enviadas pelo usuário final. Nas tabelas 9 e 10, fazemos comparativos entre os serviços gratuitos e pagos, respectivamente. 
+Todas as empresas analisadas oferecem serviços para a construção de chatbots. Na Google Cloud, temos o DialogFlow que utiliza ML para customizar os tipos de entidade que podem ser reconhecidas pelo \textit{chatbot} a partir de um conjunto de dados inicial fornecido pelo usuário desenvolvedor. O DialogFlow também faz uso das APIs de text-to-speech e speech-to-text para criar bots que se comunicam por voz com o usuário final. Através do serviço de Analytics da Google, o \textit{chatbot} pode ser otimizado para atender os interesses da sua organização. Além disso, o \textit{bot} conta também com análise de sentimentos, para melhor atender ao usuário final. O serviço da Amazon, o AWS Lex, utiliza a mesma tecnologia utilizada na Alexa para construir \textit{bots} com análise de sentimentos, compreensão de fala e escrita. O AWS Lex também oferece fácil integração com outros serviços da Amazon AWS, como lógica de negócios, banco de dados, segurança, desenvolvimento de aplicativos móveis. etc. O \textit{Watson Assistant}, da IBM, possui o recurso de direcionar o usuário para plataformas como \textit{Slack} e \textit{Facebook Messenger}, além de direcionar o usuário para um atendente humano quando necessário. Através do sistema de digressões, o \textit{chatbot} feito a partir do IBM Watson pode ir de um tópico a outro em uma conversa e retornar ao primeiro tópico posteriormente. O \textit{chatbot} também pede para o usuário ser mais claro quando é feito um pedido ambíguo ou incompreensível, evitando respostas erradas. Por fim, o serviço de \textit{bot} do Azure também permite integração com canais de comunicação, como \textit{Slack} e \textit{Facebook Messenger}. Como os serviços anteriores, também possui suporte, tanto para a interação por texto, quanto por fala. Além disso, também é possível interagir através de imagens em anexo; o Azure utilizará seus próprios serviços de PI para interagir com imagens em anexo enviadas pelo usuário final. Nas tabelas 9 e 10, fazemos comparativos entre os serviços gratuitos e pagos, respectivamente. 
 O plano padrão da Google Cloud, citado na tabela 9, compreende os recursos de texto e entrada e saída de áudio.
 
 \begin{table}[!!ht]
@@ -506,38 +535,9 @@ O serviço de tradução da IBM Cloud oferece um serviço de customização, bas
 \section{Aplicação}
 
 \section{Conclusão}
-\label{sec:headings}
 
-\medskip
+\printbibliography
 
-\bibliographystyle{unsrt}
-\bibliography{sample}
-% \bibliographystyle{unsrt}  
-%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
-%%% and comment out the ``thebibliography'' section.
-
-
-%%% Comment out this section when you \bibliography{references} is enabled.
-% \begin{thebibliography}{1}
-% George Kour and Raid Saabne.
-% \newblock Real-time segmentation of on-line handwritten arabic script.
-% \newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
-% International Conference on}, pages 417--422. IEEE, 2014.
-
-% \bibitem{kour2014fast}
-% George Kour and Raid Saabne.
-% \newblock Fast classification of handwritten on-line arabic characters.
-% \newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
-%   International Conference of}, pages 312--318. IEEE, 2014.
-
-% \bibitem{hadash2018estimate}
-% Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
-%  Jacovi.
-% \newblock Estimate and replace: A novel approach to integrating deep neural
-%  networks with existing applications.
-% \newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
-
-%\end{thebibliography}
 \newpage
 \appendixpage
 Neste apêndice, estão documentados os links dos serviços de nuvem apresentados neste estudo. 
