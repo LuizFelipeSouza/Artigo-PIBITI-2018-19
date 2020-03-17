@@ -56,7 +56,7 @@
 
 \begin{abstract}
 % \lipsum[1]
-Aprendizado de Máquina como Serviço (MLaaS) são serviços ofertados via computação em nuvem para que desenvolvedores possam utilizar os benefícios do Aprendizado de Máquina em suas aplicações, sem conhecimento específico nessa área. Com o objetivo de guiar tais desenvolvedores na escolha de um provedor de MLaaS, tabelamos neste estudo os preços dos principais provedores: Google Cloud, Amazon AWS, IBM Watson e Microsoft Azure. Com isso, notamos também que alguns provedores permitem o treinamento de modelos em algun serviços específicos, enquanto outros apenas oferecem as funcionalidades já prontas.
+Aprendizado de Máquina como Serviço (MLaaS) são serviços ofertados via computação em nuvem para que desenvolvedores possam utilizar os benefícios do Aprendizado de Máquina em suas aplicações, sem conhecimento específico nessa área. Com o objetivo de guiar tais desenvolvedores na escolha de um provedor de MLaaS, tabelamos neste estudo os preços dos principais provedores: Google Cloud, Amazon AWS, IBM Watson e Microsoft Azure. Com isso, notamos também que alguns provedores permitem o treinamento de modelos em alguns serviços específicos, enquanto outros apenas oferecem as funcionalidades já prontas.
 \end{abstract}
 
 % keywords can be removed
@@ -265,7 +265,7 @@ Nesta subseção, são descritas as 13 tarefas de PI encontradas no levantamento
 Exibiremos, subsequentemente, tabelas com comparativos entre as ferramentas de cada uma das empresas analisadas. Começamos, na subseção 5.1, comparando a disponibilidade em cada plataforma e em seguida, na subseção 5.2, seus custos.
 
 \subsection{Disponibilidade de ferramentas}
- As tabelas subsequentes ilustram em quais serviços cada tarefa está disponível. Na tabela 1 é exibida a disponibilidade das tarefas de NLP por plataforma e na tabela 2, as de PI. De acordo com a tabela 1, é possível notar que algumas das tarefas encontradas são coincidentes entre as plataformas. Um diferencial sobre o serviço de \textit{text-to-speech} da Amazon AWS, o Amazon Polly, é a possibilidade de criar avatares com animações sincronizadas com a fala e destaque de palavras, como em um karaokê. Já o Amazon Textract, a ferramenta de OCR reconhece também o conteúdo de tabelas e formulários. Seu serviço de \textit{speech-to-text}, o Amazon Transcribe, adiciona pontuação ao texto transcrito, marcações de tempo em relação ao áudio original, personalização de vocabulário, transcrição de \textit{streaming} e reconhecimento de locutores. Por fim, o Amazon Comprehend, permite o treinamento de modelos de ML através do AutoML\footnote{O serviço AutoML é discutido na subseção 4.2.3}.
+ As tabelas subsequentes ilustram em quais serviços cada tarefa está disponível. Na tabela \ref{tab:table1} é exibida a disponibilidade das tarefas de NLP por plataforma e na tabela \ref{tab:table2}, as de PI. De acordo com a tabela \ref{tab:table1}, é possível notar que algumas das tarefas encontradas são coincidentes entre as plataformas. Um diferencial sobre o serviço de \textit{text-to-speech} da Amazon AWS, o Amazon Polly, é a possibilidade de criar avatares com animações sincronizadas com a fala e destaque de palavras, como em um karaokê. Já o Amazon Textract, a ferramenta de OCR reconhece também o conteúdo de tabelas e formulários. Seu serviço de \textit{speech-to-text}, o Amazon Transcribe, adiciona pontuação ao texto transcrito, marcações de tempo em relação ao áudio original, personalização de vocabulário, transcrição de \textit{streaming} e reconhecimento de locutores. Por fim, o Amazon Comprehend, permite o treinamento de modelos de ML através do AutoML\footnote{O serviço AutoML é discutido na subseção 5.2.3}.
  
  De forma semelhante ao serviço da Amazon, a IBM Cloud oferece um serviço de \textit{speech-to-text} em tempo real, capaz de identificar diferentes locutores e customizar o modelo para maior acurácia. Para o serviço de \textit{text-to-speech}, o principal diferencial do IBM Cloud é a customização das tonalidades de voz e a sintetização para diferentes idiomas. Para o serviço de tradução, também é possível customizar as traduções para terminologias específicas. O serviço de classificação de linguagem da IBM oferece APIs compatíveis com diversas linguagens de programação e um modelo que pode ser treinado pelo usuário para classificações personalizadas. O serviço de \textit{speech-to-text} da Microsoft também possibilita a identificação dos locutores e a transcrição em tempo real a partir de diversas fontes, como telefones, vídeos e gravações.
 
@@ -323,7 +323,7 @@ Nesta seção, comparamos os preços das ferramentas analisadas entre as empresa
 
 \subsubsection{Ferramentas de NLP}
 
-Nas tabelas subsequentes, são exibidos os comparativos de preços por ferramenta, quando há coincidência de disponibilidade. Em primeiro caso, comparamos os serviços de NLP. Análise de sentimentos, reconhecimento de entidades, análise sintática, text-to-speech, speech-to-text e extração de palavras-chave. Na tabela 3, comparamos a disponibilidade gratuita desses serviços e na tabela 4, comparamos seus custos.
+Nas tabelas subsequentes, são exibidos os comparativos de preços por ferramenta, quando há coincidência de disponibilidade. Em primeiro caso, comparamos os serviços de NLP. Análise de sentimentos, reconhecimento de entidades, análise sintática, text-to-speech, speech-to-text e extração de palavras-chave. Na tabela \ref{tab:table3}, comparamos a disponibilidade gratuita desses serviços e na tabela \ref{tab:table4}, comparamos seus custos.
 
 \begin{table}[!!ht]
  \caption{Disponibilidade gratuita dos serviços básicos de NLP}
@@ -359,7 +359,7 @@ Nas tabelas subsequentes, são exibidos os comparativos de preços por ferrament
   \label{tab:table4}
 \end{table}
 
-Na Google Cloud, o serviço de Classificação de Conteúdo é cobrado pela chamada de API por unidade. Uma unidade é considerada, levando em conta tags HTML, XML, espaços, etc. Os valores no Google Cloud são cobrados de acordo com a quantidade de chamadas da API por mês. No caso do IBM Cloud, o usuário é cobrado separadamente por chamada da API, por classificador e por evento de treinamento. Ambos oferecem um mínimo grátis mensal, detalhado na tabela 4.
+Na Google Cloud, o serviço de Classificação de Conteúdo é cobrado pela chamada de API por unidade. Uma unidade é considerada, levando em conta tags HTML, XML, espaços, etc. Os valores no Google Cloud são cobrados de acordo com a quantidade de chamadas da API por mês. No caso do IBM Cloud, o usuário é cobrado separadamente por chamada da API, por classificador e por evento de treinamento. Ambos oferecem um mínimo grátis mensal, detalhado na tabela \ref{tab:table5}.
 
 \begin{table}[!!ht]
  \caption{Comparativo entre a taxa de serviços grátis de Classificação de Conteúdo do Google Cloud e do IBM Cloud}
@@ -421,7 +421,7 @@ Serviços de tradução foram encontrados em todas as plataformas. A Google Clou
   \label{tab:table8}
 \end{table}
 
-Todas as empresas analisadas oferecem o serviço de \textit{speech-to-text}. Nas tabelas 7 e 8, são comparados os planos gratuitos e pagos, respectivamente. Uma ressalva quanto ao serviço gratuito da Microsoft Azure é que este oferece 4 recursos: Padrão, fala personalizada, hospedagem do ponto de extremidade da fala personalizada e áudio multicanal de transcrição de conversas. Exceto pela hospedagem, que oferece apenas um modelo gratuito por mês, são disponibilizados 5 horas de áudio por mês para cada recurso.
+Todas as empresas analisadas oferecem o serviço de \textit{speech-to-text}. Na tabela \ref{tab:table9}, são comparados os planos gratuitos. Uma ressalva quanto ao serviço gratuito da Microsoft Azure é que este oferece 4 recursos: Padrão, fala personalizada, hospedagem do ponto de extremidade da fala personalizada e áudio multicanal de transcrição de conversas. Exceto pela hospedagem, que oferece apenas um modelo gratuito por mês, são disponibilizados 5 horas de áudio por mês para cada recurso. Na tabela \ref{tab:table10}, são exibidos os preços dos serviços de \textit{speech-to-text} pagos da Microsoft Azure.
 A Google Cloud oferece o serviço de \textit{speech-to-text} em quatro formatos. Primeiramente, temos o modelo padrão, sem \textit{smartphone} e vídeo aprimorados com dois recursos: reconhecimento de fala sem geração de registro de dados e com geração de registro. Já no modelo \textit{Premium}, são oferecidos os mesmos recursos com smartphone e vídeo aprimorados. Para construção da tabela consideramos o modelo \textit{Premium} com geração de registro de dados.
 
 \begin{table}[!!ht]
@@ -437,7 +437,7 @@ A Google Cloud oferece o serviço de \textit{speech-to-text} em quatro formatos.
   \label{tab:table9}
 \end{table}
 
-Um detalhe sobre os serviços de \textit{speech-to-text}, é que a Amazon AWS o usuário é cobrado em US\$ 0,0004 por segundo mais o acréscimo mínimo de US\$ 0,006 pelos 15 primeiros segundos. O IBM Cloud possui também o plano \textit{Premium}, o qual não tem os preços acessíveis no \textit{site}. Para esse plano, os preços devem ser combinados com a empresa. Para o serviço da Microsoft azure, consideramos o plano padrão na tabela comparativa, os demais são exibidos na tabela 8.
+Um detalhe sobre os serviços de \textit{speech-to-text}, é que a Amazon AWS o usuário é cobrado em US\$ 0,0004 por segundo mais o acréscimo mínimo de US\$ 0,006 pelos 15 primeiros segundos. O IBM Cloud possui também o plano \textit{Premium}, o qual não tem os preços acessíveis no \textit{site}. Para esse plano, os preços devem ser combinados com a empresa.
 
 \begin{table}[!!ht]
  \caption{Preços dos demais serviços de speech-to-text da Microsoft Azure (por hora)}
@@ -458,8 +458,8 @@ Todas as empresas analisadas oferecem serviços para a construção de \textit{c
 
 O serviço da Amazon, o AWS Lex, utiliza a mesma tecnologia utilizada na Alexa para construir \textit{bots} com análise de sentimentos, compreensão de fala e escrita. O AWS Lex também oferece fácil integração com outros serviços da Amazon AWS, como lógica de negócios, banco de dados, segurança, desenvolvimento de aplicativos móveis. etc. O Watson Assistant, da IBM, possui o recurso de direcionar o usuário para plataformas como Slack e Facebook Messenger, além de direcionar o usuário para um atendente humano quando necessário. Através do sistema de digressões, o \textit{chatbot} feito a partir do IBM Watson pode ir de um tópico a outro em uma conversa e retornar ao primeiro tópico posteriormente. O \textit{chatbot} também pede para o usuário ser mais claro quando é feito um pedido ambíguo ou incompreensível, evitando respostas erradas. 
 
-Por fim, o serviço de \textit{bot} da Microsoft Azure também permite integração com canais de comunicação, como Slack e Facebook Messenger. Como os serviços anteriores, também possui suporte, tanto para a interação por texto, quanto por fala. Além disso, também é possível interagir através de imagens em anexo; o Azure utilizará seus próprios serviços de PI para interagir com imagens em anexo enviadas pelo usuário final. Nas tabelas 9 e 10, fazemos comparativos entre os serviços gratuitos e pagos, respectivamente. 
-O plano padrão da Google Cloud, citado na tabela 9, compreende os recursos de texto e entrada e saída de áudio.
+Por fim, o serviço de \textit{bot} da Microsoft Azure também permite integração com canais de comunicação, como Slack e Facebook Messenger. Como os serviços anteriores, também possui suporte, tanto para a interação por texto, quanto por fala. Além disso, também é possível interagir através de imagens em anexo; o Azure utilizará seus próprios serviços de PI para interagir com imagens em anexo enviadas pelo usuário final. Nas tabelas \ref{tab:table11} e \ref{tab:table12}, fazemos comparativos entre os serviços gratuitos e pagos, respectivamente. 
+O plano padrão da Google Cloud, citado na tabela \ref{tab:table9}, compreende os recursos de texto e entrada e saída de áudio.
 
 \begin{table}[!!ht]
  \caption{Disponibilidade gratuita dos serviços de chatbot}
@@ -495,7 +495,7 @@ O plano padrão da Google Cloud, citado na tabela 9, compreende os recursos de t
 
 \subsubsection{Processamento de Imagem}
 
-Para o serviço de PI, a Amazon oferece a API Rekognition que, além de analisar imagens, permite também a análise de vídeos. Além disso, o serviço conta com aprimoramento contínuo através de algoritmos de ML. De forma semelhante, a IBM Cloud também permite treinar modelos para criar classificadores. A Google Cloud oferece uma API REST para as tarefas de PI, a API Cloud Vision, que utiliza modelos pré treinados e  o Auto ML (Beta) para treinar modelos de ML. Além disso, há também a Cloud Video Intelligence, para extrair metadados de vídeos. Os planos gratuitos de PI são comparados na tabela 11 e os planos pagos, na faixa de 5M de unidades, na tabela 12.
+Para o serviço de PI, a Amazon oferece a API Rekognition que, além de analisar imagens, permite também a análise de vídeos. Além disso, o serviço conta com aprimoramento contínuo através de algoritmos de ML. De forma semelhante, a IBM Cloud também permite treinar modelos para criar classificadores. A Google Cloud oferece uma API REST para as tarefas de PI, a API Cloud Vision, que utiliza modelos pré treinados e  o Auto ML (Beta) para treinar modelos de ML. Além disso, há também a Cloud Video Intelligence, para extrair metadados de vídeos. Os planos gratuitos de PI são comparados na tabela \ref{tab:table13} e os planos pagos, na faixa de 5M de unidades, na tabela \ref{tab:table14}.
 
 \begin{table}[!!ht]
  \caption{Disponibilidade gratuita dos serviços}
@@ -534,9 +534,9 @@ Para o serviço de PI, a Amazon oferece a API Rekognition que, além de analisar
 \end{table}
 
 \subsubsection{Treinamento de modelos de aprendizado de máquina}
-Traremos destaque, nesta subseção, para os serviços que permitem o treinamento de modelos de ML, integrados ou não. Na tabela 13, tabelamos essa informação tanto dos serviços de NLP quando dos serviços de PI.
+Traremos destaque, nesta subseção, para os serviços que permitem o treinamento de modelos de ML, integrados ou não.
 
-Iniciando pela Google Cloud, temos o serviço de PI, o Auto ML Vision (Beta). A partir dele, é possível treinar classificadores e marcar pessoas com ou sem rótulos predefinidos. Esse serviço é gratuito para até 1k de imagens previstas por mês e para uma hora de treinamento. Para a análise de vídeos, há a API \textit{Video Intelligence}, que possui uma interface gráfica e uma API REST, e permite classificar vídeos a partir de rótulos personalizados e detecta mudanças no cenário de um vídeo. Para as tarefas de NLP, a Google Cloud disponibiliza a AutoML Natural Language (Beta) e a AutoML Translation (Beta). O primeiro permite a criação e a classificação de entidades, sentimentos e outros modelos personalizados. Já o segundo permite o treinamento de modelos de ML para obter traduções mais fiéis e adaptadas a determinados contextos. Para a Amazon AWS, não foram encontrados serviços de treinamento para modelos de ML voltados a programadores sem conhecimento técnico. Na Amazon AWS, o único serviço que oferece personalização por modelos de ML, é o Amazon Comprehend.\footnote{Supracitado na subseção 4.1}
+Iniciando pela Google Cloud, temos o serviço de PI, o Auto ML Vision (Beta). A partir dele, é possível treinar classificadores e marcar pessoas com ou sem rótulos predefinidos. Esse serviço é gratuito para até 1k de imagens previstas por mês e para uma hora de treinamento. Para a análise de vídeos, há a API \textit{Video Intelligence}, que possui uma interface gráfica e uma API REST, e permite classificar vídeos a partir de rótulos personalizados e detecta mudanças no cenário de um vídeo. Para as tarefas de NLP, a Google Cloud disponibiliza a AutoML Natural Language (Beta) e a AutoML Translation (Beta). O primeiro permite a criação e a classificação de entidades, sentimentos e outros modelos personalizados. Já o segundo permite o treinamento de modelos de ML para obter traduções mais fiéis e adaptadas a determinados contextos. Para a Amazon AWS, não foram encontrados serviços de treinamento para modelos de ML voltados a programadores sem conhecimento técnico. Na Amazon AWS, o único serviço que oferece personalização por modelos de ML, é o Amazon Comprehend.\footnote{Supracitado na subseção 5.1}
 O serviço de tradução da IBM Cloud oferece um serviço de customização, baseado em ML. Para tal serviço, é cobrada uma taxa de US\$ 0,10 para cada 1k de caracteres. O serviço de classificação de linguagem natural da IBM também possibilita o treinamento de modelos, para os quais são oferecidos 4 treinamentos gratuitos por mês. Na Microsoft Azure, é possível treinar modelos para transcrição personalizada em seu serviço de \textit{speech-to-text}.
 
 \section{Conclusão}
